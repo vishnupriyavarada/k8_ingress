@@ -29,9 +29,8 @@ metadata:
   name: nginx-service
 spec:
   selector:
-    matchLabels:
-      app: frontend
-      purpose: deployment-app1
+    app: frontend
+    purpose: deployment-app1
   ports:
   - protocol: TCP
     port: 80 # service port
