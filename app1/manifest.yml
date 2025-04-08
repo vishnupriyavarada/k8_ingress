@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  labels:
+    app: frontend
+    purpose: deployment-app1
+spec:
+  replicasets: 2
+  selectors:
+    matchLabels:
+      app: frontend
+      purpose: deployment-app1
+  template:
+    metadata:
+      labels:
+        app: frontend
+        purpose: deployment-app1
+    spec:
+      containers:
+        - name: app1-container
+          image: vishnupriyadh/app1:1.0.0
+          ports:
+          - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selectors:
+    matchLabels:
+      app: frontend
+      purpose: deployment-app1
+  ports:
+  - protocol: TCP
+    port: 80 # service port
+    targetPort: 80 # Container port
+
+
+          
