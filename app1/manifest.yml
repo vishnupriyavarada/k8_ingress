@@ -45,7 +45,7 @@ metadata:
   # annotation for ingress to handle loadbalancer, listener, rule and target group
     alb.ingress.kubernetes.io/scheme: internet-facing  # annotation - for internet facing
     alb.ingress.kubernetes.io/target-type: ip # annotation - target group instances are IP based hence ip
-    alb.ingress.kubernetes.io/listen-ports:  '[{"HTTPS": 443}]' # annotation for HTTPS. for HTTP  [{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]' # annotation for HTTPS. for HTTP  [{"HTTP": 80}]'
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:529088271493:certificate/1b309286-9fe1-42e3-915f-8a23c1ac6097 # annotaion for certificate
     alb.ingress.kubernetes.io/group.name: joindevops
 spec:
